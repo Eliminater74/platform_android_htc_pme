@@ -118,6 +118,10 @@ PRODUCT_PACKAGES += \
     liboverlay \
     libtinyxml
 
+# Fingerprint
+PRODUCT_PACKAGES += \
+    fingerprintd
+
 # GPS
 PRODUCT_PACKAGES += \
     gps.msm8996 \
