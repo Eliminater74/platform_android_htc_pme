@@ -1,0 +1,3 @@
+add_lunch_combo aosp_pme-user
+add_lunch_combo aosp_pme-userdebug
+add_lunch_combo aosp_pme-eng
