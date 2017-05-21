@@ -24,7 +24,7 @@
 
     <!-- Whether a software navigation bar should be shown. NOTE: in the future this may be
          autodetected from the Configuration. -->
-    <bool name="config_showNavigationBar">true</bool>
+    <bool name="config_showNavigationBar">false</bool>
 
     <!-- Indicate whether closing the lid causes the device to go to sleep and opening
          it causes the device to wake up.
@@ -163,10 +163,12 @@
 
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveNotificationLed">true</bool>
-
-    <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
-<!--    <add-resource type="bool" name="config_intrusiveBatteryLed"></add-resource> -->
+	
+	 <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
 <!--    <bool name="config_intrusiveBatteryLed">true</bool> -->
+
+    <!-- Does the battery LED support multiple colors? Used to decide if the user can change the colors -->
+<!--    <bool name="config_multiColorBatteryLed">true</bool> -->
 
     <!-- reference volume index for music stream to limit headphone volume and display warning -->
     <integer name="config_safe_media_volume_index">10</integer>
@@ -284,6 +286,9 @@
     <!-- Boolean indicating whether Hotspot 2.0/Passpoint and ANQP queries is enabled -->
     <bool translatable="false" name="config_wifi_hotspot2_enabled">true</bool>
 
+    <!-- Boolean indicating whether 802.11r Fast BSS Transition is enabled on this platform -->
+ <!--   <bool translatable="false" name="config_wifi_fast_bss_transition_enabled">true</bool> -->
+
     <!-- Boolean indicating whether the wifi chipset has background scan support -->
     <bool translatable="false" name="config_wifi_background_scan_support">true</bool>
 
@@ -342,6 +347,7 @@
             64 - Volume rocker
          For example, a device with Home, Back and Menu keys would set this
          config to 7. -->
+    <add-resource type="integer" name="config_deviceHardwareKeys"></add-resource>
     <integer name="config_deviceHardwareKeys">83</integer>
 
     <!-- Hardware keys present on the device with the ability to wake, stored as a bit field.
@@ -374,7 +380,7 @@
     <bool name="config_powerDecoupleInteractiveModeFromDisplay">true</bool>
 
     <!-- Is the device capable of hot swapping an UICC Card -->
-    <bool name="config_hotswapCapable">true</bool>
+<!--    <bool name="config_hotswapCapable">true</bool> -->
 
     <!-- Flag specifying whether VoLTE is availasble on device -->
     <bool name="config_device_volte_available">true</bool>
@@ -485,25 +491,21 @@
     <string name="config_networkLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
     <string name="config_fusedLocationProviderPackageName" translatable="false">com.qualcomm.location</string>
 
-    <bool name="config_LTE_eri_for_network_name">false</bool>
+    <!-- Whether device supports double tap to wake -->
+    <bool name="config_supportDoubleTapWake">true</bool>
 
-    <!-- Values for GPS configuration -->
-    <string-array translatable="false" name="config_gpsParameters">
-        <item>SUPL_HOST=supl.google.com</item>
-        <item>SUPL_PORT=7275</item>
-        <item>XTRA_SERVER_1=http://xtrapath1.izatcloud.net/xtra3grc.bin</item>
-        <item>XTRA_SERVER_2=http://xtrapath2.izatcloud.net/xtra3grc.bin</item>
-        <item>XTRA_SERVER_3=http://xtrapath3.izatcloud.net/xtra3grc.bin</item>
-        <item>NTP_SERVER=north-america.pool.ntp.org</item>
-        <item>SUPL_MODE=1</item>
-        <item>SUPL_VER=0x20000</item>
-        <item>LPP_PROFILE=0</item>
-        <item>NMEA_PROVIDER=0</item>
-        <item>A_GLONASS_POS_PROTOCOL_SELECT=0</item>
-        <item>ERR_ESTIMATE=0</item>
-        <item>INTERMEDIATE_POS=0</item>
-        <item>SUPL_ES=0</item>
-    </string-array>
+    <!-- Enable Night display, which requires HWC 2.0. -->
+    <bool name="config_nightDisplayAvailable">true</bool>
+
+    <!-- Use ERI text for network name on CDMA LTE -->
+    <bool name="config_LTE_eri_for_network_name">false</bool>
+    
+    <!-- Support in Surfaceflinger for blur layers.
+         NOTE: This requires additional hardware-specific code. -->
+<!--    <bool name="config_uiBlurEnabled">true</bool> -->
+
+    <!-- Wether device has hvdcp charging support -->
+<!--    <bool name="config_hasHvdcpCharger">true</bool> -->
 
     <!-- Values for USB port setting. in format of bootmode:current function:new function -->
     <string-array translatable="false" name="config_oemUsbModeOverride">
